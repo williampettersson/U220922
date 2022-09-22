@@ -17,8 +17,6 @@ function submit() {
 
     person = {Name: name, Number: number, Address: address, Email: email};
     customers.push(person);
-
-    console.log(customers);
     
     var emptyList = document.getElementById('customerList');
     emptyList.innerHTML = '';
@@ -37,4 +35,16 @@ function submit() {
 
 function hideshow(){
     customerList.hidden = !customerList.hidden;
+}
+
+function search(){
+    var customerID = document.getElementById('search').value;
+    var outputID = document.getElementById('result');
+
+    findEmail = (person => {
+        return person.Email === customerID;
+    });
+
+    outputID.innerHTML = (`${customers.find(findEmail).Name} 
+    ${customers.find(findEmail).Number} ${customers.find(findEmail).Address} ${customers.find(findEmail).Email}`);
 }
