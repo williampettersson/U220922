@@ -29,4 +29,8 @@ function submit() {
         customerList.appendChild(list);
     });    
     
+    document.getElementById('name').value = '';
+    document.getElementById('number').value = '';
+    document.getElementById('address').value = '';
+    document.getElementById('email').value = '';
 }
