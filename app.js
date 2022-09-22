@@ -25,7 +25,7 @@ function submit() {
 
     customers.forEach (person => {
         const list = document.createElement('li');
-        list.innerHTML = (`${person.Name} ${person.Number} ${person.Email}`);
+        list.innerHTML = (`${person.Name} ${person.Number} <a href = mailto: ${person.Email}>${person.Email}</a>`);
         customerList.appendChild(list);
     });    
     
