@@ -1,6 +1,6 @@
 console.log('Hello there');
 
-var array = [];
+var customers = [];
 
 var person = {
     Name: '',
@@ -14,10 +14,19 @@ function submit() {
     const number = document.getElementById('number').value;
     const address = document.getElementById('address').value;
     const email = document.getElementById('email').value;
+
+    person = {Name: name, Number: number, Address: address, Email: email};
+    customers.push(person);
+
+    console.log(customers);
     
-    const info = document.createElement('p');
-    info.innerHTML = name + ' ' + number + ' ' + address + ' ' + email;
-    
-    main.appendChild(info);
+    var emptyList = document.getElementById('customerList');
+    emptyList.innerHTML = '';
+
+    customers.forEach (person => {
+        const list = document.createElement('li');
+        list.innerHTML = (`${person.Name} ${person.Number} ${person.Email}`);
+        customerList.appendChild(list);
+    });    
     
 }
