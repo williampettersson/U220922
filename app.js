@@ -34,3 +34,7 @@ function submit() {
     document.getElementById('address').value = '';
     document.getElementById('email').value = '';
 }
+
+function hideshow(){
+    customerList.hidden = !customerList.hidden;
+}
